@@ -618,6 +618,10 @@ const transactions = {
 let selectedType = "";
 let selectedTransaction = null;
 
+function changeUrl(path) {
+  history.pushState(null, "", path);
+}
+
 function showScreen(screenId) {
   document.querySelectorAll(".screen").forEach(screen => {
     screen.classList.remove("active");
@@ -632,8 +636,13 @@ function updateProgress(activeStep) {
   }
 }
 
-function selectCustomerType(type) {
+function selectCustomerType(type, updateUrl = true) {
   selectedType = type;
+
+  if (updateUrl) {
+    changeUrl(`/${type}`);
+  }
+
   const isPersonal = type === "perorangan";
 
   document.getElementById("transaction-title").textContent = isPersonal
@@ -668,10 +677,14 @@ function renderTransactions() {
   });
 }
 
-function openSimulation(transactionId) {
+function openSimulation(transactionId, updateUrl = true) {
   selectedTransaction = transactions[selectedType].find(item => item.id === transactionId);
 
   if (!selectedTransaction) return;
+
+  if (updateUrl) {
+    changeUrl(`/${selectedType}/${transactionId}`);
+  }
 
   document.getElementById("simulation-name").textContent = selectedTransaction.name;
   document.getElementById("simulation-direction").textContent = selectedTransaction.direction;
@@ -684,12 +697,13 @@ function openSimulation(transactionId) {
 }
 
 function finishSimulation() {
-  // Setelah simulasi selesai, user diarahkan kembali ke list transaksi kategori yang sama
+  changeUrl(`/${selectedType}`);
   showScreen("screen-transaction-list");
   updateProgress(2);
 }
 
 function backToTransactions() {
+  changeUrl(`/${selectedType}`);
   showScreen("screen-transaction-list");
   updateProgress(2);
 }
@@ -697,6 +711,34 @@ function backToTransactions() {
 function goHome() {
   selectedType = "";
   selectedTransaction = null;
+  changeUrl("/");
   showScreen("screen-customer-type");
   updateProgress(1);
 }
+
+function loadFromUrl() {
+  const parts = window.location.pathname.split("/").filter(Boolean);
+
+  if (parts.length === 0) {
+    showScreen("screen-customer-type");
+    updateProgress(1);
+    return;
+  }
+
+  const type = parts[0];
+  const transactionId = parts[1];
+
+  if (!transactions[type]) {
+    goHome();
+    return;
+  }
+
+  selectCustomerType(type, false);
+
+  if (transactionId) {
+    openSimulation(transactionId, false);
+  }
+}
+
+window.addEventListener("popstate", loadFromUrl);
+window.addEventListener("load", loadFromUrl);
