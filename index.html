@@ -12,19 +12,53 @@
       <div>
         <p class="eyebrow">Smart Service Guide</p>
         <h1>Simulasi Reservasi Nasabah</h1>
+        <p class="subtitle">Pilih role pengguna, jenis nasabah, lalu buka simulasi Figma sesuai transaksi.</p>
       </div>
     </section>
 
     <section class="progress">
-      <div class="step active" id="step-1">1. Pilih Nasabah</div>
+      <div class="step active" id="step-1">1. Pilih User</div>
       <div class="line"></div>
-      <div class="step" id="step-2">2. Pilih Transaksi</div>
+      <div class="step" id="step-2">2. Pilih Nasabah</div>
       <div class="line"></div>
-      <div class="step" id="step-3">3. Simulasi Figma</div>
+      <div class="step" id="step-3">3. Pilih Transaksi</div>
+      <div class="line"></div>
+      <div class="step" id="step-4">4. Simulasi Figma</div>
     </section>
 
-    <section id="screen-customer-type" class="screen active">
+    <section id="screen-role" class="screen active">
       <div class="section-header">
+        <h2>Pilih User</h2>
+        <p>Pilih role pengguna yang akan menggunakan simulasi.</p>
+      </div>
+
+      <div class="choice-grid three">
+        <button class="choice-card" onclick="selectRole('satpam')">
+          <div class="icon">🛡️</div>
+          <h3>Satpam</h3>
+          <p>Panduan awal untuk mengarahkan nasabah ke transaksi yang sesuai.</p>
+          <span>Lanjut →</span>
+        </button>
+
+        <button class="choice-card" onclick="selectRole('cs')">
+          <div class="icon">🎧</div>
+          <h3>Customer Service</h3>
+          <p>Simulasi layanan administrasi, rekening, kartu, dan pengaduan.</p>
+          <span>Lanjut →</span>
+        </button>
+
+        <button class="choice-card" onclick="selectRole('teller')">
+          <div class="icon">💵</div>
+          <h3>Teller</h3>
+          <p>Simulasi transaksi tunai, transfer, pembayaran, dan layanan counter.</p>
+          <span>Lanjut →</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="screen-customer-type" class="screen">
+      <div class="section-header">
+        <button class="back-link" onclick="goHome()">← Kembali ke Pilih User</button>
         <h2>Pilih Jenis Nasabah</h2>
         <p>Memilih kategori nasabah terlebih dahulu sebelum melihat daftar transaksi.</p>
       </div>
@@ -49,42 +83,30 @@
     <section id="screen-transaction-list" class="screen">
       <div class="section-header with-action">
         <div>
-          <button class="back-link" onclick="goHome()">← Kembali</button>
+          <button class="back-link" onclick="backToCustomerType()">← Kembali ke Jenis Nasabah</button>
           <h2 id="transaction-title">List Transaksi</h2>
           <p id="transaction-subtitle">Pilih transaksi yang ingin disimulasikan.</p>
         </div>
-
-        <button class="small-btn" onclick="goHome()">Ganti Jenis Nasabah</button>
+        <button class="small-btn" onclick="goHome()">Ganti User</button>
       </div>
-
       <div id="transaction-list" class="transaction-grid"></div>
     </section>
 
     <section id="screen-simulation" class="screen">
       <div class="simulation-card">
         <button class="back-link" onclick="backToTransactions()">← Kembali ke List Transaksi</button>
-
         <div class="badge">Simulasi Dipilih</div>
         <h2 id="simulation-name">Nama Transaksi</h2>
         <p id="simulation-description">Deskripsi transaksi akan muncul di sini.</p>
-
         <div class="info-box">
-          <strong>Arahan untuk Satpam</strong>
+          <strong id="direction-title">Arahan</strong>
           <p id="simulation-direction">Arahan singkat akan muncul di sini.</p>
         </div>
-
         <div class="action-row">
-          <a id="figma-link" class="primary-btn" href="#" target="_blank" rel="noopener">
-            Buka Simulasi Figma
-          </a>
-          <button class="secondary-btn" onclick="finishSimulation()">
-            Selesai Simulasi
-          </button>
+          <a id="figma-link" class="primary-btn" href="#" target="_blank" rel="noopener">Buka Simulasi Figma</a>
+          <button class="secondary-btn" onclick="finishSimulation()">Selesai Simulasi</button>
         </div>
-
-        <p class="note">
-          Tips: Figma dibuka di tab baru agar setelah simulasi selesai, satpam bisa kembali ke website ini dan memilih transaksi lain.
-        </p>
+        <p class="note">Tips: Figma dibuka di tab baru agar setelah simulasi selesai, user bisa kembali ke website ini dan memilih transaksi lain.</p>
       </div>
     </section>
   </main>

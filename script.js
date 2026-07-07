@@ -1,5 +1,4 @@
-// GANTI LINK FIGMA DI BAGIAN figmaUrl SESUAI PROTOTYPE KAMU
-const transactions = {
+const transactionsSatpam = {
   perorangan: [
     {
       id: "setor-tunai",
@@ -614,40 +613,618 @@ const transactions = {
     }
   ]
 };
+const transactionsTeller = {
+  perorangan: [
+    {
+      id: "setor-tunai",
+      name: "Setor Tunai",
+      description: "Simulasi arahan untuk nasabah individu yang ingin melakukan setoran tunai.",
+      direction: "Arahkan nasabah ke Teller. Pastikan nasabah sudah menyiapkan uang tunai, nomor rekening tujuan, dan identitas bila diperlukan.",
+      figmaUrl: "https://www.figma.com/proto/FVYM5jRaAo6Ya0XF6kQG0f/Transaksi-MSA?node-id=2879-39630&viewport=349%2C-2367%2C0.25&t=ifGWEpsw8hONGpNt-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2879%3A39630&page-id=2785%3A91151"
+    },
+    {
+      id: "tarik-tunai",
+      name: "Tarik Tunai",
+      description: "Simulasi arahan untuk nasabah individu yang ingin melakukan penarikan tunai.",
+      direction: "Arahkan nasabah ke Teller. Ingatkan nasabah untuk menyiapkan buku tabungan/kartu, identitas, dan memastikan nominal transaksi.",
+      figmaUrl: "https://www.figma.com/proto/H2Ri6uyeWvLZxzV3qwGyvP/-Per--DHE-SDA---Tarik-Tunai-Valas?page-id=9523%3A14133&node-id=9523-36956&t=jwurdw8EQX2f4uqV-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9523%3A36956&show-proto-sidebar=1"
+    },
+    {
+      id: "transfer-mandiri",
+      name: "Transfer Sesama Mandiri",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/ubRbheRHWvMXBnNI4C9Dan/DHE-SDA---Overbooking?node-id=8621-250288&p=f&t=199u670TlvH014NK-9&scaling=min-zoom&content-scaling=fixed&page-id=8446%3A233444&starting-point-node-id=8621%3A250288&show-proto-sidebar=1"
+    },
+    {
+      id: "transfer-bank-lain-sknbi",
+      name: "Transfer Bank Lain - SKNBI",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/jDYgbeeZOfNrmIxztYWhZH/GB-Tablet---Transfer-Bank-Lain---Perorangan?node-id=8166-12094&t=Kjtyq5nzhBT3XbeH-1&scaling=min-zoom&content-scaling=fixed&page-id=6741%3A124497&starting-point-node-id=8166%3A12094&show-proto-sidebar=1"
+    },
+    {
+      id: "pengembalian-dana",
+      name: "Pengembalian Dana - SKNBI",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/M5hpkMQXurGIOzPZwrDi9u/Retur-Transaksi?node-id=9606-122771&t=GqmtUowxqrQ0wWmt-1&scaling=min-zoom&content-scaling=fixed&page-id=9516%3A96164&starting-point-node-id=9606%3A122771&show-proto-sidebar=1"
+    },
+    {
+      id: "transfer-valas",
+      name: "Transfer Valuta Asing/TT",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/wZYkszYUtWPWpAa4BkeTvf/E-form-GB-Tablet-WBA-TT-Perorangan-R5.0?node-id=5060-151752&t=Wn0167Qas2DE5LTo-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=5060%3A151752&show-proto-sidebar=1"
+    },
+    {
+      id: "pembayaran",
+      name: "Pembayaran",
+      category: "Teller / CS",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/inG6VWTF5ODA5fU4NUh15J/DHE-SDA---Payment?page-id=4832%3A332&node-id=4915-16098&viewport=54%2C-834%2C0.11&t=XNh4cg44kJOq9aOB-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4915%3A16098&show-proto-sidebar=1"
+    },
+    {
+      id: "pembelian-emoney",
+      name: "Pembelian Emoney",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/dgXAksmj8E2bR3YJVapGPk/GB-Prepaid-Card?node-id=3294-32888&p=f&t=QNWVeqYB1Q0Ro3pg-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3319%3A119934&show-proto-sidebar=1"
+    },
+    {
+      id: "reservasi-nasabah-tanpa-kehadiran",
+      name: "Reservasi Nasabah Perorangan Tanpa Kehadiran",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8726-72817&viewport=-12%2C-5157%2C0.11&t=64Z0Rx02THgoCUSG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=8726%3A72817&show-proto-sidebar=1"
+    },
+    {
+      id: "multiple-debet-kredit",
+      name: "Multiple Debet Kredit",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8736-40562&viewport=-12%2C-5157%2C0.11&t=64Z0Rx02THgoCUSG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=8736%3A40562&show-proto-sidebar=1"
+    }
+  ],
 
+  nonPerorangan: [
+    {
+      id: "setor-tunai",
+      name: "Setor Tunai",
+      description: "Simulasi arahan untuk kebutuhan payroll perusahaan atau inquiry terkait payroll.",
+      direction: "Arahkan ke CS atau petugas corporate. Tanyakan apakah nasabah membawa daftar payroll/dokumen perusahaan sesuai kebutuhan.",
+      figmaUrl: "https://www.figma.com/proto/FVYM5jRaAo6Ya0XF6kQG0f/Transaksi-MSA?node-id=2887-310056&viewport=349%2C-2367%2C0.25&t=ifGWEpsw8hONGpNt-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2887%3A310056&page-id=2785%3A91151"
+    },
+    {
+      id: "tarik-tunai",
+      name: "Tarik Tunai",
+      description: "Simulasi arahan untuk nasabah perusahaan yang membutuhkan layanan bank garansi.",
+      direction: "Arahkan ke CS/officer terkait. Pastikan nasabah membawa surat permohonan dan dokumen perusahaan secara umum.",
+      figmaUrl: "https://www.figma.com/proto/f9KTRGQ416w6C5jT4aJzrm/Tarik-Tunai-IDR-Non-Perorangan?node-id=4976-91794&t=hpmqY9J3NJCrqyvn-1&scaling=min-zoom&content-scaling=fixed&page-id=4931%3A93913&starting-point-node-id=4976%3A91794&show-proto-sidebar=1"
+    },
+    {
+      id: "kliring-inkaso",
+      name: "Kliriing Inkaso",
+      description: "Simulasi arahan untuk nasabah perusahaan yang membutuhkan layanan bank garansi.",
+      direction: "Arahkan ke CS/officer terkait. Pastikan nasabah membawa surat permohonan dan dokumen perusahaan secara umum.",
+      figmaUrl: "https://www.figma.com/proto/y1NzBvYZjdq1LpGhzjx3wA/Kliring-Inkaso---Non-Perorangan?page-id=12993%3A100690&node-id=13000-108575&viewport=-9%2C-388%2C0.05&t=OY0oOhfrc2B3HrVB-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=13000%3A108575&show-proto-sidebar=1"
+    },
+    {
+      id: "transfer-mandiri",
+      name: "Transfer Sesama Mandiri",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/ubRbheRHWvMXBnNI4C9Dan/DHE-SDA---Overbooking?node-id=8621-386910&p=f&t=199u670TlvH014NK-9&scaling=min-zoom&content-scaling=fixed&page-id=8446%3A233444&starting-point-node-id=8621%3A386910&show-proto-sidebar=1"
+    },
+    {
+      id: "transfer-bank-lain",
+      name: "Transfer Bank Lain - SKNBI",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/xqmXIIfe1oz7Ne3LpS06pT/SKNBI-Non-Perorangan--All-Method-?node-id=8048-27733&t=U3GsMH2TVlWDIhCF-1&scaling=min-zoom&content-scaling=fixed&page-id=8048%3A27732&starting-point-node-id=8048%3A27733&show-proto-sidebar=1"
+    },
+    {
+      id: "pengembalian-dana",
+      name: "Pengembalian Dana - SKNBI",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/M5hpkMQXurGIOzPZwrDi9u/Retur-Transaksi?node-id=9519-60067&t=Knj0thh9wKZO15mH-1&scaling=min-zoom&content-scaling=fixed&page-id=9516%3A96164&starting-point-node-id=9519%3A60067"
+    },
+    {
+      id: "jual-beli-valas",
+      name: "Jual Beli Valas",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/3f35kNaQPfVmMCSyMzeYTa/Jual-Beli-Valas---Non-Perorangan---Single-Screen?node-id=5056-75759&p=f&t=leAXmWZF8kPGBc9W-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=5056%3A75759&show-proto-sidebar=1"
+    },
+    {
+      id: "transfer-valas",
+      name: "Transfer Valuta Asing",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/cDFxC0LOlDIsiYIIYku7Hi/E-form--GB-Tablet--WBA---TT-Non-Perorangan-R5.0?node-id=8191-178994&t=qu2MdGeYFGUnVc1y-1&scaling=scale-down&content-scaling=fixed&page-id=8185%3A173629&starting-point-node-id=8191%3A178994&show-proto-sidebar=1"
+    },
+    {
+      id: "pembayaran",
+      name: "Pembayaran DHE",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/6HjeFwYtW9GEamyznSWrAv/GB-Payment-IDR-Non-Perorangan---Single-Screen?page-id=7463%3A224698&node-id=7470-240614&viewport=110%2C-1714%2C0.07&t=wHUvFDKctbT6ol1u-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7470%3A240614&show-proto-sidebar=1"
+    },
+    {
+      id: "reservasi-nasabah-tanpa-kehadiran",
+      name: "Reservasi Nasabah Badan Tanpa Kehadiran",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/tqB0ywXdlRNVSLuh5Htsh8/Prototype-Nasabah-Tanpa-Kehadiran?node-id=47-39703&p=f&t=qNWxBa5E0Uogq2ne-0&scaling=scale-down&content-scaling=fixed&page-id=1%3A1548&starting-point-node-id=47%3A39703&show-proto-sidebar=1"
+    },
+    {
+      id: "multiple-debet-kredit",
+      name: "Multiple Debet Kredit",
+      category: "Digital Channel",
+      description: "Simulasi arahan untuk kendala akses, token, user, transaksi, atau penggunaan Kopra.",
+      direction: "Arahkan ke CS/petugas terkait digital channel. Tanyakan jenis kendala: akses, token, transaksi, atau user perusahaan.",
+      figmaUrl: "https://www.figma.com/proto/iIkJNu949EQy2c2SWNM6I8/Financial-Single-Screen?node-id=29416-66334&viewport=45%2C238%2C0.24&t=3B1f2se634bpVyHf-1&scaling=min-zoom&content-scaling=fixed&page-id=29416%3A34934&starting-point-node-id=29416%3A66334"
+    }
+  ]
+};
+const transactionsCS = {
+  perorangan: [
+    {
+      id: "pembukaan-tabungan",
+      name: "Pembukaan Rekening : Tabungan",
+      description: "Simulasi arahan untuk nasabah individu yang ingin melakukan setoran tunai.",
+      direction: "Arahkan nasabah ke Teller. Pastikan nasabah sudah menyiapkan uang tunai, nomor rekening tujuan, dan identitas bila diperlukan.",
+      figmaUrl: "https://www.figma.com/proto/W0AICVY60fk6oy1TOxK7Vc/Prototype-Onboarding-DHE-and-Pengambilan-Emas?node-id=10024-54153&p=f&t=kIdmkg61eOesGQ2w-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=10024%3A64644&show-proto-sidebar=1"
+    },
+    {
+      id: "pembukaan-giro",
+      name: "Pembukaan Rekening : Giro",
+      description: "Simulasi arahan untuk nasabah individu yang ingin melakukan penarikan tunai.",
+      direction: "Arahkan nasabah ke Teller. Ingatkan nasabah untuk menyiapkan buku tabungan/kartu, identitas, dan memastikan nominal transaksi.",
+      figmaUrl: "https://www.figma.com/proto/W0AICVY60fk6oy1TOxK7Vc/Prototype-Onboarding-DHE-and-Pengambilan-Emas?node-id=10024-54153&p=f&t=kIdmkg61eOesGQ2w-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=10026%3A7546&show-proto-sidebar=1"
+    },
+    {
+      id: "pembukaan-deposito",
+      name: "Pembukaan Rekening : Deposito",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/W0AICVY60fk6oy1TOxK7Vc/Prototype-Onboarding-DHE?node-id=10031-29324&p=f&t=kIdmkg61eOesGQ2w-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=10031%3A29324&show-proto-sidebar=1"
+    },
+    {
+      id: "pemeliharaan-tanda-tangan",
+      name: "Layanan Giro : Pemeliharaan Tanda Tangan",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/ecgAPi6fRmRXwd4SPxP4VC/GB-Account-Maintenance-Sprint-3?page-id=6965%3A18521&node-id=9857-52005&viewport=231%2C292%2C0.43&t=yjseTA4PQdf7L0r0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=9857%3A52005"
+    },
+    {
+      id: "pemeliharaan-tabungan",
+      name: "Layanan Tabungan : Pemeliharaan Tabungan Rencana",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/8eQAVaetQA3TxF0ooeqPFl/Layanan-Mandiri-Tabungan?node-id=4369-169921&p=f&t=LjaqmLxOqEyvrWwk-9&scaling=min-zoom&content-scaling=fixed&page-id=4367%3A134758&starting-point-node-id=4369%3A169921&show-proto-sidebar=1"
+    },
+    {
+      id: "pengaturan-rekening-terhubung",
+      name: "Layanan Mandiri Debit : Pengaturan Rekening Terhubung",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/nnZhkqiIiJ1M5mzTb8W8KK/DCM-Enh-4.1--Perorangan-?node-id=13188-90010&t=IoZoCLqx65xznmiN-1&scaling=min-zoom&content-scaling=fixed&page-id=517%3A39667&starting-point-node-id=13188%3A90010"
+    },
+    {
+      id: "perpanjangan-deposito",
+      name: "Layanan Deposito : Penghentian Perpanjangan Otomatis Deposito",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/X5cNj7fkQVqzIpgsoa1cjj/Layanan-Deposito-Perorangan---Non-Perorangan-5.0?node-id=31490-171470&p=f&t=1DRAbOqHLmeSZpEP-9&scaling=scale-down&content-scaling=fixed&page-id=31142%3A45591&starting-point-node-id=31490%3A171470&show-proto-sidebar=1"
+    },
+    {
+      id: "layanan-deposito-cetak-perpanjangan",
+      name: "Layanan Deposito : Layanan Cetak Perpanjangan Otomatis Deposito ",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/X5cNj7fkQVqzIpgsoa1cjj/Layanan-Deposito-Perorangan---Non-Perorangan-5.0?node-id=31490-171457&p=f&t=1DRAbOqHLmeSZpEP-9&scaling=scale-down&content-scaling=fixed&page-id=31142%3A45591&starting-point-node-id=31490%3A171457&show-proto-sidebar=1"
+    },
+    {
+      id: "pengaduan-rekening-nasabah",
+      name: "Layanan Pengaduan : Pengaduan Rekening Nasabah",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/TJlQB6czzsDHLVp6meQrFs/-5.0--Rekening-Koran?node-id=6482-2113517&t=3OvE8mSa6wWRqm6p-0&scaling=scale-down&content-scaling=fixed&page-id=6482%3A2108913&starting-point-node-id=6482%3A2113517&show-proto-sidebar=1"
+    },
+    {
+      id: "rekening-koran",
+      name: "Rekening Koran",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8736-40562&viewport=-12%2C-5157%2C0.11&t=64Z0Rx02THgoCUSG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=8736%3A40562&show-proto-sidebar=1"
+    },
+    {
+      id: "penutupan-tabungan",
+      name: "Penutupan Rekening : Tabungan",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/PMbJV8X5kMhHnChdshdKVR/GB-Tablet-Penutupan-Rekening-DHE-Perorangan?node-id=26205-327&p=f&t=HMTLgnD51VhP0sIi-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=26206%3A15045&show-proto-sidebar=1"
+    },
+    {
+      id: "penutupan-giro",
+      name: "Penutupan Rekening : Giro ",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/PMbJV8X5kMhHnChdshdKVR/GB-Tablet-Penutupan-Rekening-DHE-Perorangan?node-id=26205-327&p=f&t=HMTLgnD51VhP0sIi-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=26206%3A118109&show-proto-sidebar=1"
+    },
+    {
+      id: "penutupan-deposito",
+      name: "Penutupan Rekening : Deposito",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/PMbJV8X5kMhHnChdshdKVR/GB-Tablet-Penutupan-Rekening-DHE-Perorangan?node-id=26205-327&p=f&t=HMTLgnD51VhP0sIi-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=26214%3A15407&show-proto-sidebar=1"
+    },
+    {
+      id: "tagihan-terjadwal",
+      name: "Pembayaran Tagihan Terjadwal",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/blo3OMdJqzznQznOKRmMO1/GB-Payment-Point?page-id=2712%3A39737&node-id=2712-43678&viewport=313%2C360%2C0.13&t=uNe3oc3UNCDutBT5-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2712%3A43055"
+    },
+    {
+      id: "online-sweep",
+      name: "Pemindahan Saldo Otomatis : Online Sweep",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/OkeI0gKOwCjKVJVGsyNVZq/GB-and-WBA-Sweep-Perorangan-and-Non-Perorangan?node-id=4177-35487&t=z1KNJbUlD050c8c7-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4177%3A35487&show-proto-sidebar=1"
+    },
+    {
+      id: "batch-sweep",
+      name: "Pemindahan Saldo Otomatis : Batch Sweep",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/OkeI0gKOwCjKVJVGsyNVZq/GB-and-WBA-Sweep-Perorangan-and-Non-Perorangan?node-id=4271-17258&t=z1KNJbUlD050c8c7-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4271%3A17258&show-proto-sidebar=1"
+    },
+    {
+      id: "pembukaan-msdb",
+      name: "Pembukaan MSDB",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8718-16703&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8718%3A16703&show-proto-sidebar=1"
+    },
+    {
+      id: "layanan-kunjungan",
+      name: "Layanan Kunjungan",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8726-65932&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8726%3A65932&show-proto-sidebar=1"
+    },
+    {
+      id: "pemeliharaan-penerima-kuasa",
+      name: "Pemeliharaan Penerima Kuasa",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8729-48698&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8729%3A48698&show-proto-sidebar=1"
+    },
+    {
+      id: "penutupan-msdb",
+      name: "Penutupan MSDB",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8729-48698&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8729%3A48698&show-proto-sidebar=1"
+    },
+    {
+      id: "pencairan-emoney",
+      name: "Pencairan e-money",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8729-48698&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8729%3A48698&show-proto-sidebar=1"
+    },
+    {
+      id: "customer-profil",
+      name: "Customer Profil",
+      description: "Simulasi untuk membantu satpam mengarahkan nasabah yang ingin transfer sesama Mandiri atau bank lain.",
+      direction: "Tanyakan apakah transfer ke sesama Mandiri atau bank lain. Untuk kebutuhan khusus, arahkan sesuai ketentuan cabang.",
+      figmaUrl: "https://www.figma.com/proto/7kiA5NXIlSCJPDQp58TTpx/GB-Customer-360---Product-Offering?node-id=298009-491040&t=w8WWtdOMKo5iyd9C-1&scaling=min-zoom&content-scaling=fixed&page-id=6101%3A524281&starting-point-node-id=298009%3A491040&show-proto-sidebar=1"
+    }
+  ],
+
+  nonPerorangan: [
+    {
+      id: "pembukaan-deposito",
+      name: "Pembukaan Rekening : Deposito",
+      description: "Simulasi layanan pembukaan rekening deposito untuk nasabah badan.",
+      direction: "Arahkan ke CS/petugas terkait dan pastikan nasabah membawa dokumen perusahaan yang diperlukan.",
+      figmaUrl: "https://www.figma.com/proto/W0AICVY60fk6oy1TOxK7Vc/Prototype-Onboarding-DHE-and-Pengambilan-Emas?node-id=10024-54153&p=f&t=kIdmkg61eOesGQ2w-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=10039%3A36382&show-proto-sidebar=1"
+    },
+    {
+      id: "pemeliharaan-ttd-stempel",
+      name: "Layanan Giro : Pemeliharaan Tanda Tangan/Stempel",
+      description: "Simulasi layanan pemeliharaan tanda tangan atau stempel rekening giro.",
+      direction: "Arahkan ke CS dan pastikan dokumen perubahan telah dibawa.",
+      figmaUrl: "https://www.figma.com/proto/NiuviR29C7nc8lBAA71rhE/GB-Tablet-SVS-Non-Perorangan?page-id=2195%3A27988&node-id=2196-35063&viewport=664%2C64%2C0.44&t=gLqHijNwwF2ZMhPV-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2196%3A35063"
+    },
+    {
+      id: "pengambilan-warkat",
+      name: "Layanan Giro : Pengambilan Warkat",
+      description: "Simulasi layanan pengambilan warkat giro.",
+      direction: "Arahkan ke petugas layanan giro dan lakukan verifikasi identitas nasabah.",
+      figmaUrl: "https://www.figma.com/proto/fMnXRD4wGPtHm9o62ebY1n/-5.0--Layanan-Giro-Non-Perorangan?node-id=6920-112087&t=ifDPlBDbXejh8A4E-1&scaling=min-zoom&content-scaling=fixed&page-id=6867%3A128039&starting-point-node-id=6920%3A112087&show-proto-sidebar=1"
+    },
+    {
+      id: "aktivasi-warkat",
+      name: "Layanan Giro : Aktivasi Warkat",
+      description: "Simulasi layanan aktivasi warkat giro.",
+      direction: "Arahkan ke petugas layanan giro untuk proses aktivasi.",
+      figmaUrl: "https://www.figma.com/proto/fMnXRD4wGPtHm9o62ebY1n/-5.0--Layanan-Giro-Non-Perorangan?node-id=6920-112056&t=8dnJOkmt5eXJiGqR-1&scaling=contain&content-scaling=fixed&page-id=6867%3A128039&starting-point-node-id=6920%3A112056"
+    },
+    {
+      id: "pemblokiran-warkat",
+      name: "Layanan Giro : Pemblokiran Warkat (Non DHN)",
+      description: "Simulasi layanan pemblokiran warkat.",
+      direction: "Arahkan ke petugas layanan giro untuk proses pemblokiran.",
+      figmaUrl: "https://www.figma.com/proto/fMnXRD4wGPtHm9o62ebY1n/-5.0--Layanan-Giro-Non-Perorangan?node-id=6879-132761&t=8dnJOkmt5eXJiGqR-1&scaling=contain&content-scaling=fixed&page-id=6867%3A128039&starting-point-node-id=6879%3A132761"
+    },
+    {
+      id: "sp-dhn",
+      name: "Layanan Giro : SP/DHN",
+      description: "Simulasi layanan SP/DHN pada rekening giro.",
+      direction: "Arahkan ke petugas layanan giro untuk verifikasi dan proses lebih lanjut.",
+      figmaUrl: "https://www.figma.com/proto/DPvlkNSzt9rFYskmTEmV4s/-5.0--SP-DHN---Giro-Khusus?node-id=11080-130300&t=cQV0QD5DK21BzvTe-1&scaling=contain&content-scaling=fixed&page-id=11080%3A44112&starting-point-node-id=11080%3A130300&show-proto-sidebar=1"
+    },
+    {
+      id: "pembuatan-debit-baru",
+      name: "Layanan Mandiri Debit : Pembuatan Debit Baru",
+      description: "Simulasi pembuatan kartu Mandiri Debit baru.",
+      direction: "Arahkan ke CS untuk proses penerbitan kartu baru.",
+      figmaUrl: "https://www.figma.com/proto/KXc2YAlwKuzBJ7VQcf9l4Y/DCM-Enh-4.1--Non-Perorangan-?node-id=7878-137304&t=VDp4anT3jNwkvszA-1&scaling=min-zoom&content-scaling=fixed&page-id=7869%3A84008&starting-point-node-id=7878%3A137304&show-proto-sidebar=1"
+    },
+    {
+      id: "pengaturan-rekening-terhubung",
+      name: "Layanan Mandiri Debit : Pengaturan Rekening Terhubung",
+      description: "Simulasi pengaturan rekening yang terhubung dengan kartu debit.",
+      direction: "Arahkan ke CS untuk melakukan perubahan rekening terhubung.",
+      figmaUrl: "https://www.figma.com/proto/KXc2YAlwKuzBJ7VQcf9l4Y/DCM-Enh-4.1--Non-Perorangan-?node-id=7881-51416&t=VDp4anT3jNwkvszA-1&scaling=contain&content-scaling=fixed&page-id=7869%3A84008&starting-point-node-id=7881%3A51416"
+    },
+    {
+      id: "penggantian-mandiri-debit",
+      name: "Layanan Mandiri Debit : Penggantian Mandiri Debit",
+      description: "Simulasi penggantian kartu Mandiri Debit.",
+      direction: "Arahkan ke CS untuk proses penggantian kartu.",
+      figmaUrl: "https://www.figma.com/proto/KXc2YAlwKuzBJ7VQcf9l4Y/DCM-Enh-4.1--Non-Perorangan-?node-id=7889-84179&t=VDp4anT3jNwkvszA-1&scaling=contain&content-scaling=fixed&page-id=7869%3A84008&starting-point-node-id=7889%3A84179"
+    },
+    {
+      id: "pemblokiran-mandiri-debit",
+      name: "Layanan Mandiri Debit : Pemblokiran Mandiri Debit",
+      description: "Simulasi pemblokiran kartu Mandiri Debit.",
+      direction: "Arahkan ke CS untuk melakukan pemblokiran kartu.",
+      figmaUrl: "https://www.figma.com/proto/KXc2YAlwKuzBJ7VQcf9l4Y/DCM-Enh-4.1--Non-Perorangan-?node-id=7891-146529&t=VDp4anT3jNwkvszA-1&scaling=contain&content-scaling=fixed&page-id=7869%3A84008&starting-point-node-id=7891%3A146529"
+    },
+    {
+      id: "pembukaan-blokir-mandiri-debit",
+      name: "Layanan Mandiri Debit : Pembukaan Blokir Mandiri Debit",
+      description: "Simulasi pembukaan blokir kartu Mandiri Debit.",
+      direction: "Arahkan ke CS untuk membuka blokir kartu.",
+      figmaUrl: "https://www.figma.com/proto/KXc2YAlwKuzBJ7VQcf9l4Y/DCM-Enh-4.1--Non-Perorangan-?node-id=7906-180190&t=VDp4anT3jNwkvszA-1&scaling=contain&content-scaling=fixed&page-id=7869%3A84008&starting-point-node-id=7906%3A180190"
+    },
+    {
+      id: "pembuatan-pin-mandiri-debit",
+      name: "Layanan Mandiri Debit : Pembuatan PIN Mandiri Debit Baru",
+      description: "Simulasi pembuatan PIN baru kartu Mandiri Debit.",
+      direction: "Arahkan ke CS untuk melakukan reset atau pembuatan PIN baru.",
+      figmaUrl: "https://www.figma.com/proto/KXc2YAlwKuzBJ7VQcf9l4Y/DCM-Enh-4.1--Non-Perorangan-?node-id=7910-215073&t=VDp4anT3jNwkvszA-1&scaling=contain&content-scaling=fixed&page-id=7869%3A84008&starting-point-node-id=7910%3A215073"
+    },
+    {
+      id: "pengambilan-mandiri-debit",
+      name: "Layanan Mandiri Debit : Pengambilan Mandiri Debit",
+      description: "Simulasi pengambilan kartu Mandiri Debit.",
+      direction: "Arahkan ke CS untuk proses pengambilan kartu.",
+      figmaUrl: "https://www.figma.com/proto/KXc2YAlwKuzBJ7VQcf9l4Y/DCM-Enh-4.1--Non-Perorangan-?node-id=7910-267172&t=VDp4anT3jNwkvszA-1&scaling=contain&content-scaling=fixed&page-id=7869%3A84008&starting-point-node-id=7910%3A267172"
+    },
+    {
+      id: "penghentian-perpanjangan-otomatis-deposito",
+      name: "Layanan Deposito : Penghentian Perpanjangan Otomatis Deposito",
+      description: "Simulasi penghentian ARO deposito.",
+      direction: "Arahkan ke CS untuk memproses penghentian perpanjangan otomatis.",
+      figmaUrl: "https://www.figma.com/proto/X5cNj7fkQVqzIpgsoa1cjj/Layanan-Deposito-Perorangan---Non-Perorangan-5.0?node-id=31205-248892&p=f&t=RFRmj9BAmeqAsWpo-9&scaling=min-zoom&content-scaling=fixed&page-id=31142%3A45591&starting-point-node-id=31205%3A248892&show-proto-sidebar=1"
+    },
+    {
+      id: "pengubahan-rekening-pencairan-deposito",
+      name: "Layanan Deposito : Pengubahan Rekening Pencairan Deposito",
+      description: "Simulasi perubahan rekening pencairan deposito.",
+      direction: "Arahkan ke CS untuk memproses perubahan rekening pencairan.",
+      figmaUrl: "https://www.figma.com/proto/X5cNj7fkQVqzIpgsoa1cjj/Layanan-Deposito-Perorangan---Non-Perorangan-5.0?node-id=31148-197951&p=f&t=RFRmj9BAmeqAsWpo-9&scaling=min-zoom&content-scaling=fixed&page-id=31142%3A45591&starting-point-node-id=31148%3A197951"
+    },
+    {
+      id: "pengubahan-rekening-penampungan-bunga",
+      name: "Layanan Deposito : Pengubahan Rekening Penampungan Bunga Deposito",
+      description: "Simulasi perubahan rekening penampungan bunga deposito.",
+      direction: "Arahkan ke CS untuk memproses perubahan rekening bunga.",
+      figmaUrl: "https://www.figma.com/proto/X5cNj7fkQVqzIpgsoa1cjj/Layanan-Deposito-Perorangan---Non-Perorangan-5.0?node-id=31202-187105&p=f&t=RFRmj9BAmeqAsWpo-9&scaling=min-zoom&content-scaling=fixed&page-id=31142%3A45591&starting-point-node-id=31202%3A187105"
+    },
+    {
+      id: "cetak-perpanjangan-otomatis-deposito",
+      name: "Layanan Deposito : Layanan Cetak Perpanjangan Otomatis Deposito",
+      description: "Simulasi pencetakan dokumen perpanjangan otomatis deposito.",
+      direction: "Arahkan ke CS untuk pencetakan dokumen.",
+      figmaUrl: "https://www.figma.com/proto/X5cNj7fkQVqzIpgsoa1cjj/Layanan-Deposito-Perorangan---Non-Perorangan-5.0?node-id=31202-196144&p=f&t=RFRmj9BAmeqAsWpo-9&scaling=min-zoom&content-scaling=fixed&page-id=31142%3A45591&starting-point-node-id=31202%3A196144"
+    },
+    {
+      id: "pencetakan-ulang-bilyet-deposito",
+      name: "Layanan Deposito : Pencetakan Ulang Bilyet Deposito",
+      description: "Simulasi pencetakan ulang bilyet deposito.",
+      direction: "Arahkan ke CS untuk proses pencetakan ulang bilyet.",
+      figmaUrl: "https://www.figma.com/proto/X5cNj7fkQVqzIpgsoa1cjj/Layanan-Deposito-Perorangan---Non-Perorangan-5.0?node-id=31202-196144&p=f&t=RFRmj9BAmeqAsWpo-9&scaling=min-zoom&content-scaling=fixed&page-id=31142%3A45591&starting-point-node-id=31202%3A196144"
+    },
+    {
+      id: "pengaduan-rekening",
+      name: "Layanan Pengaduan : Pengaduan Rekening Nasabah",
+      description: "Simulasi penyampaian pengaduan rekening nasabah.",
+      direction: "Arahkan ke CS untuk pencatatan dan penanganan pengaduan.",
+      figmaUrl: "https://www.figma.com/proto/oMJKG1uyAYL0yybVaqgkgP/-R5.0--Complaint-Handling-CIS?node-id=17008-42295&p=f&t=TyAbBnAjwKCfeqy3-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=17134%3A109225&show-proto-sidebar=1"
+    },
+    {
+      id: "blokir-rekening",
+      name: "Blokir Rekening",
+      description: "Simulasi pemblokiran rekening.",
+      direction: "Arahkan ke CS untuk proses pemblokiran rekening.",
+      figmaUrl: "https://www.figma.com/proto/ajhIXYqwHAtgkDAgpUHsoK/-5.0--AM-Non-Perorangan?node-id=6124-50778&t=MWDUJAFzBVT1C55j-1&scaling=contain&content-scaling=fixed&page-id=6109%3A17532&starting-point-node-id=6124%3A50778"
+    },
+    {
+      id: "aktivasi-rekening",
+      name: "Aktivasi Rekening",
+      description: "Simulasi aktivasi rekening.",
+      direction: "Arahkan ke CS untuk proses aktivasi rekening.",
+      figmaUrl: "https://www.figma.com/proto/ajhIXYqwHAtgkDAgpUHsoK/-5.0--AM-Non-Perorangan?node-id=6124-50836&t=MWDUJAFzBVT1C55j-1&scaling=contain&content-scaling=fixed&page-id=6109%3A17532&starting-point-node-id=6124%3A50836"
+    },
+    {
+      id: "rekening-koran",
+      name: "Rekening Koran",
+      description: "Simulasi permintaan rekening koran.",
+      direction: "Arahkan ke CS untuk pencetakan rekening koran.",
+      figmaUrl: "https://www.figma.com/proto/TJlQB6czzsDHLVp6meQrFs/-5.0--Rekening-Koran?node-id=6564-80206&t=3OvE8mSa6wWRqm6p-0&scaling=scale-down&content-scaling=fixed&page-id=6482%3A2108913&starting-point-node-id=6564%3A80206&show-proto-sidebar=1"
+    },
+    {
+      id: "penutupan-tabungan",
+      name: "Penutupan Rekening : Tabungan",
+      description: "Simulasi penutupan rekening tabungan.",
+      direction: "Arahkan ke CS untuk proses penutupan rekening.",
+      figmaUrl: "https://www.figma.com/proto/6MkUZaTmTxyqH6eRfMrWRW/GB-Tablet-Penutupan-Rekening-DHE-Non-Perorangan-4.1?node-id=27004-90431&p=f&t=WB0CMYizCR9JGi4F-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=27020%3A94526"
+    },
+    {
+      id: "penutupan-giro",
+      name: "Penutupan Rekening : Giro",
+      description: "Simulasi penutupan rekening giro.",
+      direction: "Arahkan ke CS untuk proses penutupan rekening.",
+      figmaUrl: "https://www.figma.com/proto/6MkUZaTmTxyqH6eRfMrWRW/GB-Tablet-Penutupan-Rekening-DHE-Non-Perorangan-4.1?node-id=27004-90431&p=f&t=WB0CMYizCR9JGi4F-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=27008%3A210446"
+    },
+    {
+      id: "penutupan-deposito",
+      name: "Penutupan Rekening : Deposito",
+      description: "Simulasi penutupan rekening deposito.",
+      direction: "Arahkan ke CS untuk proses penutupan deposito.",
+      figmaUrl: "https://www.figma.com/proto/6MkUZaTmTxyqH6eRfMrWRW/GB-Tablet-Penutupan-Rekening-DHE-Non-Perorangan-4.1?node-id=27004-90431&p=f&t=WB0CMYizCR9JGi4F-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=27008%3A215480"
+    },
+    {
+      id: "pembayaran-tagihan-terjadwal",
+      name: "Pembayaran Tagihan Terjadwal",
+      description: "Simulasi pembayaran tagihan terjadwal.",
+      direction: "Arahkan ke CS untuk pengaturan pembayaran terjadwal.",
+      figmaUrl: "https://www.figma.com/proto/blo3OMdJqzznQznOKRmMO1/GB-Payment-Point?page-id=2718%3A70447&node-id=2718-70964&viewport=311%2C335%2C0.19&t=3pDpb9KCZ3dvvWOV-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2718%3A70964"
+    },
+    {
+      id: "online-sweep",
+      name: "Pemindahan Saldo Otomatis : Online Sweep",
+      description: "Simulasi layanan Online Sweep.",
+      direction: "Arahkan ke CS untuk pengaturan Online Sweep.",
+      figmaUrl: "https://www.figma.com/proto/OkeI0gKOwCjKVJVGsyNVZq/GB-and-WBA-Sweep-Perorangan-and-Non-Perorangan?node-id=4188-43711&t=z1KNJbUlD050c8c7-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4188%3A43711&show-proto-sidebar=1"
+    },
+    {
+      id: "batch-sweep",
+      name: "Pemindahan Saldo Otomatis : Batch Sweep",
+      description: "Simulasi layanan Batch Sweep.",
+      direction: "Arahkan ke CS untuk pengaturan Batch Sweep.",
+      figmaUrl: "https://www.figma.com/proto/OkeI0gKOwCjKVJVGsyNVZq/GB-and-WBA-Sweep-Perorangan-and-Non-Perorangan?node-id=4316-142252&t=z1KNJbUlD050c8c7-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4316%3A142252&show-proto-sidebar=1"
+    },
+    {
+      id: "pembukaan-msdb",
+      name: "Pembukaan MSDB",
+      description: "Simulasi pembukaan Mandiri Safe Deposit Box.",
+      direction: "Arahkan ke CS untuk proses pembukaan MSDB.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8718-16703&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8718%3A16703&show-proto-sidebar=1"
+    },
+    {
+      id: "layanan-kunjungan-msdb",
+      name: "Layanan Kunjungan MSDB",
+      description: "Simulasi layanan kunjungan MSDB.",
+      direction: "Arahkan ke petugas Safe Deposit Box.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8718-16703&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8718%3A16703&show-proto-sidebar=1"
+    },
+    {
+      id: "pemeliharaan-penerima-kuasa",
+      name: "Pemeliharaan Penerima Kuasa",
+      description: "Simulasi pemeliharaan data penerima kuasa MSDB.",
+      direction: "Arahkan ke CS untuk proses perubahan data.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8718-16703&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8718%3A16703&show-proto-sidebar=1"
+    },
+    {
+      id: "penutupan-msdb",
+      name: "Penutupan MSDB",
+      description: "Simulasi penutupan layanan MSDB.",
+      direction: "Arahkan ke CS untuk proses penutupan.",
+      figmaUrl: "https://www.figma.com/proto/1bjqlN6jdS4eGDOIfXOxkz/E-form-Layanan-Mandiri-SDB?page-id=8711%3A92221&node-id=8718-16703&viewport=49%2C-406%2C0.09&t=7Ukage4kGQmWQTTY-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=8718%3A16703&show-proto-sidebar=1"
+    },
+    {
+      id: "whitelist-nasabah-badan",
+      name: "Whitelist Nasabah Badan Tanpa Kehadiran",
+      description: "Simulasi whitelist nasabah badan tanpa kehadiran.",
+      direction: "Arahkan ke CS untuk proses whitelist.",
+      figmaUrl: "https://www.figma.com/proto/tqB0ywXdlRNVSLuh5Htsh8/Prototype-Nasabah-Tanpa-Kehadiran?node-id=19-20440&p=f&t=qNWxBa5E0Uogq2ne-0&scaling=scale-down&content-scaling=fixed&page-id=1%3A1548&starting-point-node-id=19%3A20440&show-proto-sidebar=1"
+    },
+    {
+      id: "customer-profile-nasabah-badan",
+      name: "Customer Profile - Nasabah Badan",
+      description: "Simulasi melihat profil nasabah badan.",
+      direction: "Arahkan ke petugas layanan untuk melihat informasi profil nasabah.",
+      figmaUrl: "https://www.figma.com/proto/7kiA5NXIlSCJPDQp58TTpx/GB-Customer-360---Product-Offering?node-id=298009-491114&t=w8WWtdOMKo5iyd9C-1&scaling=min-zoom&content-scaling=fixed&page-id=6101%3A524281&starting-point-node-id=298009%3A491114"
+    }
+  ]
+};
+
+const transactionsByRole = {
+  satpam: transactionsSatpam,
+  teller: transactionsTeller,
+  cs: transactionsCS
+};
+
+let selectedRole = "";
 let selectedType = "";
 let selectedTransaction = null;
 
-function changeUrl(path) {
-  history.pushState(null, "", path);
+const roleLabel = {
+  satpam: "Satpam",
+  cs: "Customer Service",
+  teller: "Teller"
+};
+
+const roleCategory = {
+  satpam: "Satpam",
+  cs: "Customer Service",
+  teller: "Teller"
+};
+
+function getActiveTransactions() {
+  if (!selectedRole || !selectedType) return [];
+  const roleData = transactionsByRole[selectedRole] || {};
+  return roleData[selectedType] || [];
 }
 
 function showScreen(screenId) {
-  document.querySelectorAll(".screen").forEach(screen => {
-    screen.classList.remove("active");
-  });
-
-  document.getElementById(screenId).classList.add("active");
+  document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active"));
+  const target = document.getElementById(screenId);
+  if (target) target.classList.add("active");
 }
 
 function updateProgress(activeStep) {
-  for (let i = 1; i <= 3; i++) {
-    document.getElementById(`step-${i}`).classList.toggle("active", i <= activeStep);
+  for (let i = 1; i <= 4; i++) {
+    const step = document.getElementById(`step-${i}`);
+    if (step) step.classList.toggle("active", i <= activeStep);
   }
 }
 
-function selectCustomerType(type, updateUrl = true) {
+function selectRole(role) {
+  selectedRole = role;
+  selectedType = "";
+  selectedTransaction = null;
+  showScreen("screen-customer-type");
+  updateProgress(2);
+}
+
+function selectCustomerType(type) {
   selectedType = type;
-
-  if (updateUrl) {
-    changeUrl(`/${type}`);
-  }
-
   const isPersonal = type === "perorangan";
 
   document.getElementById("transaction-title").textContent = isPersonal
-    ? "List Transaksi Nasabah Perorangan"
-    : "List Transaksi Nasabah Non Perorangan";
+    ? `List Transaksi Nasabah Perorangan - ${roleLabel[selectedRole]}`
+    : `List Transaksi Nasabah Non Perorangan - ${roleLabel[selectedRole]}`;
 
   document.getElementById("transaction-subtitle").textContent = isPersonal
     ? "Pilih transaksi individu yang ingin disimulasikan."
@@ -655,21 +1232,32 @@ function selectCustomerType(type, updateUrl = true) {
 
   renderTransactions();
   showScreen("screen-transaction-list");
-  updateProgress(2);
+  updateProgress(3);
 }
 
 function renderTransactions() {
   const container = document.getElementById("transaction-list");
   container.innerHTML = "";
 
-  transactions[selectedType].forEach(transaction => {
+  const list = getActiveTransactions();
+
+  if (list.length === 0) {
+    container.innerHTML = `<div class="section-header"><h2>Data belum tersedia</h2><p>Belum ada transaksi untuk role dan jenis nasabah ini.</p></div>`;
+    return;
+  }
+
+  list.forEach((transaction, index) => {
     const card = document.createElement("button");
     card.className = "transaction-card";
-    card.onclick = () => openSimulation(transaction.id);
+    card.type = "button";
+    card.onclick = () => openSimulation(index);
+
+    const category = transaction.category || roleCategory[selectedRole] || "Transaksi";
 
     card.innerHTML = `
-      <span class="tag">${transaction.category}</span>
+      <span class="tag">${category}</span>
       <h3>${transaction.name}</h3>
+      <p>${transaction.description || "Klik untuk membuka simulasi transaksi."}</p>
       <span>Mulai simulasi →</span>
     `;
 
@@ -677,68 +1265,43 @@ function renderTransactions() {
   });
 }
 
-function openSimulation(transactionId, updateUrl = true) {
-  selectedTransaction = transactions[selectedType].find(item => item.id === transactionId);
-
+function openSimulation(transactionIndex) {
+  selectedTransaction = getActiveTransactions()[transactionIndex];
   if (!selectedTransaction) return;
 
-  if (updateUrl) {
-    changeUrl(`/${selectedType}/${transactionId}`);
-  }
-
-  document.getElementById("simulation-name").textContent = selectedTransaction.name;
-  document.getElementById("simulation-direction").textContent = selectedTransaction.direction;
+  document.getElementById("simulation-name").textContent = `${selectedTransaction.name} - ${roleLabel[selectedRole]}`;
+  document.getElementById("simulation-description").textContent = selectedTransaction.description || "Simulasi transaksi dipilih.";
+  document.getElementById("direction-title").textContent = `Arahan untuk ${roleLabel[selectedRole]}`;
+  document.getElementById("simulation-direction").textContent = selectedTransaction.direction || "Ikuti alur simulasi pada Figma.";
 
   const figmaLink = document.getElementById("figma-link");
-  figmaLink.href = selectedTransaction.figmaUrl;
+  figmaLink.href = selectedTransaction.figmaUrl || "#";
 
   showScreen("screen-simulation");
-  updateProgress(3);
+  updateProgress(4);
 }
 
 function finishSimulation() {
-  changeUrl(`/${selectedType}`);
   showScreen("screen-transaction-list");
-  updateProgress(2);
+  updateProgress(3);
 }
 
 function backToTransactions() {
-  changeUrl(`/${selectedType}`);
   showScreen("screen-transaction-list");
+  updateProgress(3);
+}
+
+function backToCustomerType() {
+  selectedType = "";
+  selectedTransaction = null;
+  showScreen("screen-customer-type");
   updateProgress(2);
 }
 
 function goHome() {
+  selectedRole = "";
   selectedType = "";
   selectedTransaction = null;
-  changeUrl("/");
-  showScreen("screen-customer-type");
+  showScreen("screen-role");
   updateProgress(1);
 }
-
-function loadFromUrl() {
-  const parts = window.location.pathname.split("/").filter(Boolean);
-
-  if (parts.length === 0) {
-    showScreen("screen-customer-type");
-    updateProgress(1);
-    return;
-  }
-
-  const type = parts[0];
-  const transactionId = parts[1];
-
-  if (!transactions[type]) {
-    goHome();
-    return;
-  }
-
-  selectCustomerType(type, false);
-
-  if (transactionId) {
-    openSimulation(transactionId, false);
-  }
-}
-
-window.addEventListener("popstate", loadFromUrl);
-window.addEventListener("load", loadFromUrl);
