@@ -1191,6 +1191,11 @@ const roleCategory = {
   teller: "Teller"
 };
 
+function goToRoute(path) {
+  history.pushState({}, "", path);
+  handleRoute();
+}
+
 function getActiveTransactions() {
   if (!selectedRole || !selectedType) return [];
   const roleData = transactionsByRole[selectedRole] || {};
@@ -1198,7 +1203,10 @@ function getActiveTransactions() {
 }
 
 function showScreen(screenId) {
-  document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active"));
+  document.querySelectorAll(".screen").forEach(screen => {
+    screen.classList.remove("active");
+  });
+
   const target = document.getElementById(screenId);
   if (target) target.classList.add("active");
 }
@@ -1211,16 +1219,30 @@ function updateProgress(activeStep) {
 }
 
 function selectRole(role) {
-  selectedRole = role;
-  selectedType = "";
-  selectedTransaction = null;
+  goToRoute(`/${role}`);
+}
+
+function selectCustomerType(type) {
+  goToRoute(`/${selectedRole}/${type}`);
+}
+
+function openSimulation(transactionIndex) {
+  const transaction = getActiveTransactions()[transactionIndex];
+  if (!transaction) return;
+
+  goToRoute(`/${selectedRole}/${selectedType}/${transaction.id}`);
+}
+
+function renderCustomerType() {
   showScreen("screen-customer-type");
   updateProgress(2);
 }
 
-function selectCustomerType(type) {
-  selectedType = type;
-  const isPersonal = type === "perorangan";
+function renderTransactions() {
+  const container = document.getElementById("transaction-list");
+  container.innerHTML = "";
+
+  const isPersonal = selectedType === "perorangan";
 
   document.getElementById("transaction-title").textContent = isPersonal
     ? `List Transaksi Nasabah Perorangan - ${roleLabel[selectedRole]}`
@@ -1230,19 +1252,15 @@ function selectCustomerType(type) {
     ? "Pilih transaksi individu yang ingin disimulasikan."
     : "Pilih transaksi perusahaan/wholesale yang ingin disimulasikan.";
 
-  renderTransactions();
-  showScreen("screen-transaction-list");
-  updateProgress(3);
-}
-
-function renderTransactions() {
-  const container = document.getElementById("transaction-list");
-  container.innerHTML = "";
-
   const list = getActiveTransactions();
 
   if (list.length === 0) {
-    container.innerHTML = `<div class="section-header"><h2>Data belum tersedia</h2><p>Belum ada transaksi untuk role dan jenis nasabah ini.</p></div>`;
+    container.innerHTML = `
+      <div class="section-header">
+        <h2>Data belum tersedia</h2>
+        <p>Belum ada transaksi untuk role dan jenis nasabah ini.</p>
+      </div>
+    `;
     return;
   }
 
@@ -1263,16 +1281,32 @@ function renderTransactions() {
 
     container.appendChild(card);
   });
+
+  showScreen("screen-transaction-list");
+  updateProgress(3);
 }
 
-function openSimulation(transactionIndex) {
-  selectedTransaction = getActiveTransactions()[transactionIndex];
-  if (!selectedTransaction) return;
+function renderSimulation(transactionId) {
+  const list = getActiveTransactions();
+  selectedTransaction = list.find(item => item.id === transactionId);
 
-  document.getElementById("simulation-name").textContent = `${selectedTransaction.name} - ${roleLabel[selectedRole]}`;
-  document.getElementById("simulation-description").textContent = selectedTransaction.description || "Simulasi transaksi dipilih.";
-  document.getElementById("direction-title").textContent = `Arahan untuk ${roleLabel[selectedRole]}`;
-  document.getElementById("simulation-direction").textContent = selectedTransaction.direction || "Ikuti alur simulasi pada Figma.";
+  if (!selectedTransaction) {
+    showScreen("screen-transaction-list");
+    updateProgress(3);
+    return;
+  }
+
+  document.getElementById("simulation-name").textContent =
+    `${selectedTransaction.name} - ${roleLabel[selectedRole]}`;
+
+  document.getElementById("simulation-description").textContent =
+    selectedTransaction.description || "Simulasi transaksi dipilih.";
+
+  document.getElementById("direction-title").textContent =
+    `Arahan untuk ${roleLabel[selectedRole]}`;
+
+  document.getElementById("simulation-direction").textContent =
+    selectedTransaction.direction || "Ikuti alur simulasi pada Figma.";
 
   const figmaLink = document.getElementById("figma-link");
   figmaLink.href = selectedTransaction.figmaUrl || "#";
@@ -1281,27 +1315,66 @@ function openSimulation(transactionIndex) {
   updateProgress(4);
 }
 
-function finishSimulation() {
-  showScreen("screen-transaction-list");
-  updateProgress(3);
-}
+function handleRoute() {
+  const path = window.location.pathname.split("/").filter(Boolean);
 
-function backToTransactions() {
-  showScreen("screen-transaction-list");
-  updateProgress(3);
-}
-
-function backToCustomerType() {
-  selectedType = "";
-  selectedTransaction = null;
-  showScreen("screen-customer-type");
-  updateProgress(2);
-}
-
-function goHome() {
   selectedRole = "";
   selectedType = "";
   selectedTransaction = null;
-  showScreen("screen-role");
-  updateProgress(1);
+
+  if (path.length === 0) {
+    showScreen("screen-role");
+    updateProgress(1);
+    return;
+  }
+
+  const role = path[0];
+  const type = path[1];
+  const transactionId = path[2];
+
+  if (!transactionsByRole[role]) {
+    goHome();
+    return;
+  }
+
+  selectedRole = role;
+
+  if (!type) {
+    renderCustomerType();
+    return;
+  }
+
+  if (!transactionsByRole[role][type]) {
+    goToRoute(`/${role}`);
+    return;
+  }
+
+  selectedType = type;
+
+  if (!transactionId) {
+    renderTransactions();
+    return;
+  }
+
+  renderTransactions();
+  renderSimulation(transactionId);
 }
+
+function finishSimulation() {
+  goToRoute(`/${selectedRole}/${selectedType}`);
+}
+
+function backToTransactions() {
+  goToRoute(`/${selectedRole}/${selectedType}`);
+}
+
+function backToCustomerType() {
+  goToRoute(`/${selectedRole}`);
+}
+
+function goHome() {
+  goToRoute("/");
+}
+
+window.addEventListener("popstate", handleRoute);
+document.addEventListener("DOMContentLoaded", handleRoute);
